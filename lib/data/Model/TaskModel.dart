@@ -1,13 +1,15 @@
 class taskitem {
+  final int? id;
   final String? taskTitle;
   final String? taskDate;
   final bool? taskStatus;
 
-  taskitem({this.taskDate, this.taskStatus, this.taskTitle});
+  taskitem({this.taskDate, this.taskStatus, this.taskTitle,this.id});
   factory taskitem.fromjson(JsonData) {
     return taskitem(
-        taskTitle: JsonData['Task-content'],
-        taskDate: JsonData['Task-Date'],
-        taskStatus: JsonData['Task-Status']);
+      id: JsonData['id'],
+        taskTitle: JsonData['content'],
+        taskDate: JsonData['date'],
+        taskStatus: JsonData['status']);
   }
 }
